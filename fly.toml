@@ -7,7 +7,7 @@ kill_timeout = 5
 processes = []
 
 [deploy]
-  release_command = "/app/bin/migrate"
+  release_command = "/app/bin/pizza_delivery eval PizzaDelivery.Release.migrate"
 
 [env]
   PHX_HOST = "pizza-delivery.fly.dev"
