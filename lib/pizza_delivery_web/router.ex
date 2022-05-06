@@ -8,6 +8,8 @@ defmodule PizzaDeliveryWeb.Router do
   scope "/" do
     pipe_through :api
 
+    get "/", PizzaDeliveryWeb.HealthCheckController, :index
+
     forward "/graphiql", Absinthe.Plug.GraphiQL,
       schema: PizzaDeliveryWeb.Schema,
       interface: :simple,
