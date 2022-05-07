@@ -8,6 +8,7 @@ defmodule PizzaDeliveryWeb.Schema do
     field :name, non_null(:string)
     field :slug, non_null(:string)
     field :description, non_null(:string)
+    field :address, :string
     field :website, :string
     field :phone, :string
   end
