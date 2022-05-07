@@ -11,6 +11,15 @@ defmodule PizzaDeliveryWeb.Schema do
     field :address, :string
     field :website, :string
     field :phone, :string
+    field :pizzas, list_of(:pizza)
+  end
+
+  object :pizza do
+    field :id, non_null(:id)
+    field :name, non_null(:string)
+    field :price_usd, non_null(:float)
+    field :image, :string
+    field :restaurant, non_null(:restaurant)
   end
 
   query do
