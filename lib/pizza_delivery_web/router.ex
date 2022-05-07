@@ -10,7 +10,7 @@ defmodule PizzaDeliveryWeb.Router do
 
     get "/", PizzaDeliveryWeb.HealthCheckController, :index
 
-    forward "/graphiql", Absinthe.Plug.GraphiQL,
+    forward "/graphql", Absinthe.Plug.GraphiQL,
       schema: PizzaDeliveryWeb.Schema,
       interface: :simple,
       context: %{pubsub: PizzaDeliveryWeb.Endpoint}
