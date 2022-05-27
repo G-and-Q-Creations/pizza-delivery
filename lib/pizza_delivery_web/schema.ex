@@ -12,7 +12,9 @@ defmodule PizzaDeliveryWeb.Schema do
     field :address, :string
     field :website, :string
     field :phone, :string
-    field :pizzas, list_of(:pizza)
+    field :pizzas, list_of(:pizza) do
+      resolve &PizzaResolver.list_pizzas/3
+    end
   end
 
   object :pizza do

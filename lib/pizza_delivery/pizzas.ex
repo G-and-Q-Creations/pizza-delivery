@@ -28,8 +28,8 @@ defmodule PizzaDelivery.Pizzas do
       iex> list_restaurant_pizzas(1)
       [%Pizza{}, ....]
   """
-  def list_restaurant_pizzas(restaurant_id) do
-    Repo.all(from p in Pizza, where: p.restaurant_id == ^restaurant_id)
+  def list_pizza(%PizzaDelivery.Restaurants.Restaurant{} = restaurant) do
+    Repo.all(from p in Pizza, where: p.restaurant_id == ^restaurant.id)
   end
 
   @doc """
