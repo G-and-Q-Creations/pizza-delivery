@@ -2,6 +2,7 @@ defmodule PizzaDeliveryWeb.Schema do
   use Absinthe.Schema
 
   alias PizzaDeliveryWeb.RestaurantsResolver
+  alias PizzaDeliveryWeb.PizzaResolver
 
   object :restaurant do
     field :id, non_null(:id)
@@ -26,6 +27,11 @@ defmodule PizzaDeliveryWeb.Schema do
     @desc "Get all restaurants"
     field :all_restaurants, non_null(list_of(non_null(:restaurant))) do
       resolve(&RestaurantsResolver.all_restaurants/3)
+    end
+
+    @desc "Get all pizzas"
+    field :all_pizzas, non_null(list_of(non_null(:pizza))) do
+      resolve(&PizzaResolver.all_pizzas/3)
     end
   end
 end
